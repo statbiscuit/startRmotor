@@ -1,0 +1,121 @@
+---
+title: "Libraries"
+author: "Kabilan Kathiravel"
+date: "05/12/2021"
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r cars, include = FALSE}
+library(learnr)
+library(tidyverse)
+options(repos = "https://cran.stat.auckland.ac.nz/")
+library(palmerpenguins)
+```
+
+## Welcome
+
+This is a tutorial on libraries in R and the pipe operator. If you are not sure what a library is in this context, please check out [this link](https://hbctraining.github.io/Intro-to-R-flipped/lessons/04_introR_packages.html) to get some idea before trying the exercises. For the pipe operator try [here](https://style.tidyverse.org/pipes.html).
+
+In this tutorial you will learn about:
+
+- Loading and installing libraries
+- Getting help to understand a specific library in R
+- The pipe operator (%>%)
+
+## Install packages
+
+Let's have a look at the [Palmer Penguins dataset](https://allisonhorst.github.io/palmerpenguins/articles/intro.html). It contains size measurements for three penguin species observed on three islands in Antarctica's Palmer Archipelago. 
+
+However, we don't already have the package installed in R so to use it we have to do so. Write down the command that installs the package ("palmerpenguins"), then press 'run code' to check your answer.
+
+```{r installex1, exercise = TRUE}
+    
+```
+```{r installex1-solution}
+    install.packages("palmerpenguins")
+```
+
+
+<div id="installex1-hint">
+**Hint:** This is the use of the `install.packages()` function.
+</div>
+
+
+## Load libraries and ask for help
+
+To access the data, you need to load the "palmerpenguins" library into your R program. As it is now installed, you can do so!
+
+```{r loadex1, exercise = TRUE}
+    
+```
+```{r loadex1-solution}
+    library(palmerpenguins)
+```
+
+You want to know more about the palmerpenguins library you are working with. There are two commonly used ways of doing this in R. Write down one below.
+
+```{r helpex1, exercise = TRUE}
+    
+```
+```{r helpex1-solution}
+    help(palmerpenguins)
+```
+
+You need the tidyverse library to manipulate this data. You will also need ggplot2 to visualise it. Load each library in below.
+
+```{r loadex2, exercise = TRUE}
+    
+```
+```{r loadex2-solution}
+    library(tidyverse)
+    library(ggplot2)
+```
+
+
+
+## Piping
+
+Now we have each library we need - excellent! Now we can get to looking at the data using the penguins dataset it is loaded to.
+
+Let's have a look at the first six rows, using the pipe operator (%>%).
+
+```{r pipeex1, exercise = TRUE}
+    
+```
+```{r pipeex1-solution}
+    penguins %>%
+  head()
+```
+
+<div id="pipeex1-hint">
+**Hint:** This is the use of the `head()` function.
+</div>
+
+
+
+
+## Visualisation
+
+For visualisation we can use ggplot2. For example, we might want to see how flipper length varies with bill length. To do so, we can plot a scatter plot linking the two.
+
+## Questions
+
+```{r library-mcq, echo=FALSE}
+question("Which of the following commands installs tidyverse in R?",
+  answer("install(tidyverse)"),
+  answer("library(tidyverse)"),
+  answer("install.packages('tidyverse')", correct = TRUE),
+  answer("open sesame")
+)
+```
+
+
