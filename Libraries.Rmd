@@ -95,10 +95,19 @@ Let's have a look at the first six rows, using the pipe operator (%>%).
     penguins %>%
   head()
 ```
-
 <div id="pipeex1-hint">
 **Hint:** This is the use of the `head()` function.
 </div>
+
+Just from looking at the head, you may notice that there are some null (NA) values. It may be worthwhile getting a feel for which rows are like this. Start by filtering rows with null values for 'sex'.
+
+```{r pipeex2, exercise = TRUE}
+    
+```
+```{r pipeex2-solution}
+    penguins %>%
+  filter(is.na(sex))
+```
 
 
 
@@ -106,6 +115,15 @@ Let's have a look at the first six rows, using the pipe operator (%>%).
 ## Visualisation
 
 For visualisation we can use ggplot2. For example, we might want to see how flipper length varies with bill length. To do so, we can plot a scatter plot linking the two.
+
+```{r visex1, exercise = TRUE}
+    
+```
+```{r visex1-solution}
+ggplot(data = penguins) +
+  aes(x = bill_length_mm, y = flipper_length_mm) +
+  geom_point()
+```
 
 ## Questions
 
