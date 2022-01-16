@@ -11,6 +11,7 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+gradethis::gradethis_setup()
 ```
 
 
@@ -40,8 +41,10 @@ However, we don't already have the package installed in R so to use it we have t
 ```{r installex1, exercise = TRUE}
     
 ```
-```{r installex1-solution}
-    install.packages("palmerpenguins")
+```{r installex1-check}
+grade_result(
+  pass_if(~identical(.result, install.packages("palmerpenguins")))
+)
 ```
 
 
@@ -57,9 +60,12 @@ To access the data, you need to load the "palmerpenguins" library into your R pr
 ```{r loadex1, exercise = TRUE}
     
 ```
-```{r loadex1-solution}
-    library(palmerpenguins)
+```{r loadex1-check}
+grade_result(
+  pass_if(~identical(.result, library(palmerpenguins)))
+)
 ```
+
 
 You want to know more about the palmerpenguins library you are working with. There are two commonly used ways of doing this in R. Write down one below.
 
@@ -91,10 +97,12 @@ Let's have a look at the first six rows, using the pipe operator (%>%).
 ```{r pipeex1, exercise = TRUE}
     
 ```
-```{r pipeex1-solution}
-    penguins %>%
-  head()
+```{r pipeex1-check}
+grade_result(
+  pass_if(~identical(.result, penguins %>% head()))
+)
 ```
+
 <div id="pipeex1-hint">
 **Hint:** This is the use of the `head()` function.
 </div>
@@ -104,9 +112,12 @@ Just from looking at the head, you may notice that there are some null (NA) valu
 ```{r pipeex2, exercise = TRUE}
     
 ```
-```{r pipeex2-solution}
-    penguins %>%
-  filter(is.na(sex))
+
+```{r pipeex2-check}
+grade_result(
+  pass_if(~identical(.result, penguins %>%
+  filter(is.na(sex))))
+)
 ```
 
 
@@ -119,11 +130,14 @@ For visualisation we can use ggplot2. For example, we might want to see how flip
 ```{r visex1, exercise = TRUE}
     
 ```
-```{r visex1-solution}
-ggplot(data = penguins) +
+```{r visex1-check}
+grade_result(
+  pass_if(~identical(.result, ggplot(data = penguins) +
   aes(x = bill_length_mm, y = flipper_length_mm) +
-  geom_point()
+  geom_point()))
+)
 ```
+
 
 ## Questions
 
