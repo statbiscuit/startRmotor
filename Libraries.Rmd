@@ -20,6 +20,7 @@ library(learnr)
 library(tidyverse)
 options(repos = "https://cran.stat.auckland.ac.nz/")
 library(palmerpenguins)
+library(sortable)
 ```
 
 ## Welcome
@@ -36,21 +37,46 @@ In this tutorial you will learn about:
 
 Let's have a look at the [Palmer Penguins dataset](https://allisonhorst.github.io/palmerpenguins/articles/intro.html). It contains size measurements for three penguin species observed on three islands in Antarctica's Palmer Archipelago. 
 
-However, we don't already have the package installed in R so to use it we have to do so. Write down the command that installs the package ("palmerpenguins"), then press 'run code' to check your answer.
+If we don't have the package installed in R, we have to do so.
 
-```{r installex1, exercise = TRUE}
-    
+```{r installex1, echo=FALSE}
+question("Which of the following commands installs the palmerpenguins library in R?",
+  answer("install(palmerpenguins)"),
+  answer("library(tidyverse)"),
+  answer("install.packages('palmerpenguins')", correct = TRUE),
+  answer("open sesame")
+)
 ```
-```{r installex1-check}
-grade_result(
-  pass_if(~identical(.result, install.packages("palmerpenguins")))
+```{r installex2, echo=FALSE}
+correct_penguins <- c(
+    "install.packages('palmerpenguins')",
+    "library(palmerpenguins)",
+    "penguins %>% head()"
+  )
+
+question_rank(
+  "Assuming you don't have the Palmer Penguins data in R on your computer, order the following so you can access the first six rows",
+  answer(correct_penguins, correct = TRUE),
+  answer(rev(correct_penguins), correct = FALSE,
+         message = "Should you access the data before you load the library? Or load the library before you install it?"
+         ),
+  allow_retry = TRUE
+)
+
+```
+```{r installex3, echo=FALSE}
+question("Which of the following would be an appropriate step to take after getting this R error message - Error in library(palmerpenguins) : there is no package called ‘palmerpenguins’? Select all that apply. ?",
+  answer("Yell at your computer"),
+  answer("Running install.packages(\"palmerpenguins\")", correct = TRUE),
+  answer("Check that \"palmerpenguins\" precisely is the name of the package that you want to use", correct = TRUE),
+  answer("Ignore the error message and continue running the code that follows"),
+  allow_retry = TRUE
 )
 ```
 
 
-<div id="installex1-hint">
-**Hint:** This is the use of the `install.packages()` function.
-</div>
+
+
 
 
 ## Load libraries and ask for help
