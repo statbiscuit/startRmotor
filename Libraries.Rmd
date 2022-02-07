@@ -73,44 +73,53 @@ question("Which of the following would be an appropriate step to take after gett
   allow_retry = TRUE
 )
 ```
-
-
-
-
-
-
-## Load libraries and ask for help
-
-To access the data, you need to load the "palmerpenguins" library into your R program. As it is now installed, you can do so!
-
-```{r loadex1, exercise = TRUE}
-    
-```
-```{r loadex1-check}
-grade_result(
-  pass_if(~identical(.result, library(palmerpenguins)))
+```{r installex4, echo=FALSE}
+question("You want to find out more about the palmerpenguins library before deciding to use it. If you can't use Google, which of the following SHOULD you do?",
+  answer("Double check that you have palmerpenguins installed in your environment", correct = TRUE),
+  answer("Run help(\"palmerpenguins\")"),
+  answer("Run ?palmerpenguins"),
+  answer("Run help.search(\"palmerpenguins\")", correct = TRUE),
+  answer("Run ??palmerpenguins", correct = TRUE),
+  allow_retry = TRUE
 )
 ```
 
 
-You want to know more about the palmerpenguins library you are working with. There are two commonly used ways of doing this in R. Write down one below.
 
-```{r helpex1, exercise = TRUE}
-    
-```
-```{r helpex1-solution}
-    help(palmerpenguins)
-```
 
-You need the tidyverse library to manipulate this data. You will also need ggplot2 to visualise it. Load each library in below.
 
-```{r loadex2, exercise = TRUE}
-    
-```
-```{r loadex2-solution}
-    library(tidyverse)
-    library(ggplot2)
-```
+<!-- ## Load libraries and ask for help -->
+
+<!-- To access the data, you need to load the "palmerpenguins" library into your R program. As it is now installed, you can do so! -->
+
+<!-- ```{r loadex1, exercise = TRUE} -->
+
+<!-- ``` -->
+<!-- ```{r loadex1-check} -->
+<!-- grade_result( -->
+<!--   pass_if(~identical(.result, library(palmerpenguins))) -->
+<!-- ) -->
+<!-- ``` -->
+
+
+<!-- You want to know more about the palmerpenguins library you are working with. There are two commonly used ways of doing this in R. Write down one below. -->
+
+<!-- ```{r helpex1, exercise = TRUE} -->
+
+<!-- ``` -->
+<!-- ```{r helpex1-solution} -->
+<!--     help(palmerpenguins) -->
+<!-- ``` -->
+
+<!-- You need the tidyverse library to manipulate this data. You will also need ggplot2 to visualise it. Load each library in below. -->
+
+<!-- ```{r loadex2, exercise = TRUE} -->
+
+<!-- ``` -->
+<!-- ```{r loadex2-solution} -->
+<!--     library(tidyverse) -->
+<!--     library(ggplot2) -->
+<!-- ``` -->
 
 
 
@@ -146,34 +155,76 @@ grade_result(
 )
 ```
 
+How can you get the mean body mass of each year (call this "average_mass") in kg (without worrying about N/A values)?
 
+```{r pipeex3, exercise = TRUE}
 
-
-## Visualisation
-
-For visualisation we can use ggplot2. For example, we might want to see how flipper length varies with bill length. To do so, we can plot a scatter plot linking the two.
-
-```{r visex1, exercise = TRUE}
-    
 ```
-```{r visex1-check}
+
+```{r pipeex3-check}
 grade_result(
-  pass_if(~identical(.result, ggplot(data = penguins) +
-  aes(x = bill_length_mm, y = flipper_length_mm) +
-  geom_point()))
+  pass_if(~identical(.result, penguins %>%
+  group_by(year) %>%
+    summarize(average_mass = mean(body_mass_g) / 1000)))
+)
+```
+
+What was the highest flipper length (in mm) of any penguin in 2008?
+
+```{r pipeex4, exercise = TRUE}
+
+```
+
+```{r pipeex4-check}
+grade_result(
+  pass_if(~identical(.result, penguins %>%
+  group_by(year) %>%
+    summarize(average_mass = mean(body_mass_g) / 1000)))
+)
+```
+
+How many of species "Adelie" were found in island "Dream" in 2007 (call the answer "count")?
+
+```{r pipeex5, exercise = TRUE}
+
+```
+
+```{r pipeex5-check}
+grade_result(
+  pass_if(~identical(.result, penguins %>%
+    filter(year == 2007 & species == "Adelie" & island == "Dream") %>%
+      summarise(count = n())))
 )
 ```
 
 
-## Questions
 
-```{r library-mcq, echo=FALSE}
-question("Which of the following commands installs tidyverse in R?",
-  answer("install(tidyverse)"),
-  answer("library(tidyverse)"),
-  answer("install.packages('tidyverse')", correct = TRUE),
-  answer("open sesame")
-)
-```
+
+<!-- ## Visualisation -->
+
+<!-- For visualisation we can use ggplot2. For example, we might want to see how flipper length varies with bill length. To do so, we can plot a scatter plot linking the two. -->
+
+<!-- ```{r visex1, exercise = TRUE} -->
+
+<!-- ``` -->
+<!-- ```{r visex1-check} -->
+<!-- grade_result( -->
+<!--   pass_if(~identical(.result, ggplot(data = penguins) + -->
+<!--   aes(x = bill_length_mm, y = flipper_length_mm) + -->
+<!--   geom_point())) -->
+<!-- ) -->
+<!-- ``` -->
+
+
+<!-- ## Questions -->
+
+<!-- ```{r library-mcq, echo=FALSE} -->
+<!-- question("Which of the following commands installs tidyverse in R?", -->
+<!--   answer("install(tidyverse)"), -->
+<!--   answer("library(tidyverse)"), -->
+<!--   answer("install.packages('tidyverse')", correct = TRUE), -->
+<!--   answer("open sesame") -->
+<!-- ) -->
+<!-- ``` -->
 
 
