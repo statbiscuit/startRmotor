@@ -109,9 +109,7 @@ grade_result(
 )
 ```
 
-Imagine this. You want to roll a 12 sided die 15 times to decide how many litres of chocolate milk you will buy in each of the next fifteen weeks. The code below tries to recreate that situation, but fails. Make the correct adjustments below (DON'T worry about piping here) so you get the right amount of milk :D
-
-You want to express how much you love chocolate milk with a variable
+You want to only analyse penguins in 'Torgersen' island. Adapt the code below to do that.
 
 ```{r debugex3, exercise = TRUE}
 (island == "Torgersen") %>% filter(penguins)
@@ -123,6 +121,43 @@ grade_result(
 ```
 
 
+Change one part of the if statement so number == 3.
+
+```{r debugex4, exercise = TRUE}
+number = 0
+if (3>6) {
+  number = 3
+}
+number
+```
+```{r debugex4-check}
+grade_result(
+  pass_if(~identical(.result, 3))
+)
+```
+
+Repeat 10 20 times in R. 
+
+```{r debugex5, exercise = TRUE}
+rep(2321, 10)
+```
+```{r debugex5-check}
+grade_result(
+  pass_if(~identical(.result, rep(10, 20)))
+)
+```
+
+Put in the right index to return the last number in series b (avoid the temptation to write the answer directly :) )
+
+```{r debugex6, exercise = TRUE}
+b <- 10:20
+b[29]
+```
+```{r debugex6-check}
+grade_result(
+  pass_if(~identical(as.numeric(.result), 20))
+)
+```
 <!-- ## Load libraries and ask for help -->
 
 <!-- To access the data, you need to load the "palmerpenguins" library into your R program. As it is now installed, you can do so! -->
