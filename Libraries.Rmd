@@ -158,39 +158,6 @@ grade_result(
   pass_if(~identical(as.numeric(.result), 20))
 )
 ```
-<!-- ## Load libraries and ask for help -->
-
-<!-- To access the data, you need to load the "palmerpenguins" library into your R program. As it is now installed, you can do so! -->
-
-<!-- ```{r loadex1, exercise = TRUE} -->
-
-<!-- ``` -->
-<!-- ```{r loadex1-check} -->
-<!-- grade_result( -->
-<!--   pass_if(~identical(.result, library(palmerpenguins))) -->
-<!-- ) -->
-<!-- ``` -->
-
-
-<!-- You want to know more about the palmerpenguins library you are working with. There are two commonly used ways of doing this in R. Write down one below. -->
-
-<!-- ```{r helpex1, exercise = TRUE} -->
-
-<!-- ``` -->
-<!-- ```{r helpex1-solution} -->
-<!--     help(palmerpenguins) -->
-<!-- ``` -->
-
-<!-- You need the tidyverse library to manipulate this data. You will also need ggplot2 to visualise it. Load each library in below. -->
-
-<!-- ```{r loadex2, exercise = TRUE} -->
-
-<!-- ``` -->
-<!-- ```{r loadex2-solution} -->
-<!--     library(tidyverse) -->
-<!--     library(ggplot2) -->
-<!-- ``` -->
-
 
 
 ## Piping
