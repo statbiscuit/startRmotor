@@ -21,6 +21,7 @@ library(tidyverse)
 options(repos = "https://cran.stat.auckland.ac.nz/")
 library(palmerpenguins)
 library(sortable)
+set.seed(1)
 ```
 
 ## Welcome
@@ -84,10 +85,79 @@ question("You want to find out more about the palmerpenguins library before deci
 )
 ```
 
+## Debugging
+
+We want to load all the Palmer Penguins data. However we have an error (run this to see it). Correct the code to get the Palmer Penguins tibble.
+
+```{r debugex1, exercise = TRUE}
+penguin
+```
+```{r debugex1-check}
+grade_result(
+  pass_if(~identical(.result, penguins))
+)
+```
+
+We want to drop all NA rows. Correct the code below to allow this to happen.
+
+```{r debugex2, exercise = TRUE}
+penguins  %>% dropna
+```
+```{r debugex2-check}
+grade_result(
+  pass_if(~identical(.result, penguins  %>% drop_na()))
+)
+```
+
+You want to only analyse penguins in 'Torgersen' island. Adapt the code below to do that.
+
+```{r debugex3, exercise = TRUE}
+(island == "Torgersen") %>% filter(penguins)
+```
+```{r debugex3-check}
+grade_result(
+  pass_if(~identical(.result, penguins %>% filter(island == "Torgersen")))
+)
+```
 
 
+Change one part of the if statement so number == 3.
 
+```{r debugex4, exercise = TRUE}
+number = 0
+if (3>6) {
+  number = 3
+}
+number
+```
+```{r debugex4-check}
+grade_result(
+  pass_if(~identical(.result, 3))
+)
+```
 
+Repeat 10 20 times in R. 
+
+```{r debugex5, exercise = TRUE}
+rep(2321, 10)
+```
+```{r debugex5-check}
+grade_result(
+  pass_if(~identical(.result, rep(10, 20)))
+)
+```
+
+Put in the right index to return the last number in series b (avoid the temptation to write the answer directly :) )
+
+```{r debugex6, exercise = TRUE}
+b <- 10:20
+b[29]
+```
+```{r debugex6-check}
+grade_result(
+  pass_if(~identical(as.numeric(.result), 20))
+)
+```
 <!-- ## Load libraries and ask for help -->
 
 <!-- To access the data, you need to load the "palmerpenguins" library into your R program. As it is now installed, you can do so! -->
