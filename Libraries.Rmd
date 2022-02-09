@@ -216,15 +216,59 @@ grade_result(
 <!-- ``` -->
 
 
-<!-- ## Questions -->
+## Questions
 
-<!-- ```{r library-mcq, echo=FALSE} -->
-<!-- question("Which of the following commands installs tidyverse in R?", -->
-<!--   answer("install(tidyverse)"), -->
-<!--   answer("library(tidyverse)"), -->
-<!--   answer("install.packages('tidyverse')", correct = TRUE), -->
-<!--   answer("open sesame") -->
-<!-- ) -->
-<!-- ``` -->
+```{r mcq, echo=FALSE}
+question("Which of the following will cause a compiler error?",
+   answer("i_like_tidyversed <- TRUE"),
+   answer("library(tidyverse)"),
+   answer("install.packages('tidyverse'))", correct = TRUE),
+   answer("some_number <- 3 * 6231 - 4") 
+ )
+ ```
+ ```{r mcq2, echo=FALSE}
+question("What is the most likely cause of Error: Object \"avocado\" not found?",
+   answer("The object avocado does not exist in your console"),
+   answer("The function avocado() does not exist in your current environment", correct = TRUE),
+   answer("The object avocado does not exist in your working directory"),
+   answer("The object avocado does not exist in your current environment"),
+   answer("The file avocado.csv does not exist in your working directory") 
+ )
+ ```
+  ```{r mcq3, echo=FALSE}
+question("You have a dataset filled with information about several different people and whether they have diabetes or not called 'diabetes.csv' and you load it into your R program under the variable name 'diabetes'. You see that the data's fields are 'gender', 'age', 'BMI', 'glucose', 'age' and 'diabetes'. You want to explore the data. Which of the following expressions are valid?.",
+   answer("diabete %>% groupby('age') %>% summarize(average_bmi = mean(BMI))"),
+   answer("diabetes %>% groupby('age', 'gender') %>% summarize(average_bmi = mean(BMI))", correct = TRUE),
+   answer("diabetes %>% groupby('age', 'gender) %>% summarize(average_bmi = mean(BMI))"),
+   answer("diabetes %>% groupby('age', 'gender') %>% summarize(average_bmi = mean(bmi))") 
+ )
+ ```
+   ```{r mcq4, echo=FALSE}
+question("Which of the following would get you the average 'height' for the tibble 'elephants' in each 'nation'?",
+   answer("elephants %>% summarize(average_height) %>% group_by(nation)"),
+   answer("elephants %<% group_by(nation) %<% summarize(average_height = mean(height)"),
+   answer("elephants %>% group_by(nation, creed) %>% summarize(mean(height))"),
+   answer("elephants %>% group_by(nation) %>% summarize(average_height = mean(height))", correct = TRUE) 
+ )
+ ```
+```{r mcq5, echo=FALSE}
+question("Which of the following is the most likely reason for getting the following R error message Error in data %>% mean(x) : could not find function \"%>%\"?",
+   answer("The function mean() does not exist"),
+   answer("The gatekeepers of the universe casted a curse on your R"),
+   answer("You haven’t loaded the package that contains the function %>%", correct = TRUE),
+   answer("The object data does not contain a column named x") 
+ )
+ ```
+ ```{r mcq6, echo=FALSE}
+question("Which of the following shows how to express 'filter(penguins_nafree, island == \"Torgersen\"' through piping?"
+,
+   answer("(island == \"Torgersen\") %>% filter(penguins_nafree)"),
+   answer("penguins_nafree %>% filter(island == \"Torgerson\")"),
+   answer("penguins_nafree %<% filter(island == \"Torgersen\")"),
+   answer("None of the above", correct = TRUE) 
+ )
+ ```
+
+
 
 
