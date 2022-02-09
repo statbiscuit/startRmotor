@@ -21,6 +21,7 @@ library(tidyverse)
 options(repos = "https://cran.stat.auckland.ac.nz/")
 library(palmerpenguins)
 library(sortable)
+set.seed(1)
 ```
 
 ## Welcome
@@ -84,8 +85,42 @@ question("You want to find out more about the palmerpenguins library before deci
 )
 ```
 
+## Debugging
 
+We want to load all the Palmer Penguins data. However we have an error (run this to see it). Correct the code to get the Palmer Penguins tibble.
 
+```{r debugex1, exercise = TRUE}
+penguin
+```
+```{r debugex1-check}
+grade_result(
+  pass_if(~identical(.result, penguins))
+)
+```
+
+We want to drop all NA rows. Correct the code below to allow this to happen.
+
+```{r debugex2, exercise = TRUE}
+penguins  %>% dropna
+```
+```{r debugex2-check}
+grade_result(
+  pass_if(~identical(.result, penguins  %>% drop_na()))
+)
+```
+
+Imagine this. You want to roll a 12 sided die 15 times to decide how many litres of chocolate milk you will buy in each of the next fifteen weeks. The code below tries to recreate that situation, but fails. Make the correct adjustments below (DON'T worry about piping here) so you get the right amount of milk :D
+
+You want to express how much you love chocolate milk with a variable
+
+```{r debugex3, exercise = TRUE}
+(island == "Torgersen") %>% filter(penguins)
+```
+```{r debugex3-check}
+grade_result(
+  pass_if(~identical(.result, penguins %>% filter(island == "Torgersen")))
+)
+```
 
 
 <!-- ## Load libraries and ask for help -->
