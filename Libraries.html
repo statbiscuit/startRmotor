@@ -215,7 +215,33 @@ if (window.hljs) {
 <!--   geom_point())) -->
 <!-- ) -->
 <!-- ``` -->
-<!-- ## Questions -->
+</div>
+<div id="section-questions" class="section level2">
+<h2>Questions</h2>
+<div class="panel panel-default">
+<div data-label="mcq" class="tutorial-question panel-body">
+<div id="mcq-answer_container" class="shiny-html-output"></div>
+<div id="mcq-message_container" class="shiny-html-output"></div>
+<div id="mcq-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+<div class="panel panel-default">
+<div data-label="mcq2" class="tutorial-question panel-body">
+<div id="mcq2-answer_container" class="shiny-html-output"></div>
+<div id="mcq2-message_container" class="shiny-html-output"></div>
+<div id="mcq2-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+<div class="panel panel-default">
+<div data-label="mcq3" class="tutorial-question panel-body">
+<div id="mcq3-answer_container" class="shiny-html-output"></div>
+<div id="mcq3-message_container" class="shiny-html-output"></div>
+<div id="mcq3-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
 <!-- ```{r library-mcq, echo=FALSE} -->
 <!-- question("Which of the following commands installs tidyverse in R?", -->
 <!--   answer("install(tidyverse)"), -->
@@ -250,19 +276,19 @@ session$onSessionEnded(function() {
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "installex1", question = structure("Which of the following commands installs the palmerpenguins library in R?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_dc48f00", 
+"character")), answers = list(structure(list(id = "lnr_ans_1021591", 
     option = "install(palmerpenguins)", value = "install(palmerpenguins)", 
     label = structure("install(palmerpenguins)", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4a840d5", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f288568", 
     option = "library(tidyverse)", value = "library(tidyverse)", 
     label = structure("library(tidyverse)", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_efff61b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_424272b", 
     option = "install.packages('palmerpenguins')", value = "install.packages('palmerpenguins')", 
     label = structure("install.packages(&#39;palmerpenguins&#39;)", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1b2dcd0", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bf705cc", 
     option = "open sesame", value = "open sesame", label = structure("open sesame", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -273,19 +299,19 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "installex1-answer", question = "installex1"), loading = structure("<strong>Loading:<\u002fstrong> \nWhich of the following commands installs the palmerpenguins library in R?\n<br/><br/><br/>", html = TRUE, class = c("html", 
 "character")), random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 219196714.397929, options = list()), class = c("learnr_radio", 
+    seed = 274354078.872244, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "sortable_rank", label = "installex2", 
     question = structure("Assuming you don&#39;t have the Palmer Penguins data in R on your computer, order the following so you can access the first six rows", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_24d445a", 
+    "character")), answers = list(structure(list(id = "lnr_ans_30973ec", 
         option = c("install.packages('palmerpenguins')", "library(palmerpenguins)", 
         "penguins %>% head()"), value = c("install.packages('palmerpenguins')", 
         "library(palmerpenguins)", "penguins %>% head()"), label = structure("install.packages(&#39;palmerpenguins&#39;)\nlibrary(palmerpenguins)\npenguins %&gt;% head()", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_12fb70d", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_953e784", 
         option = c("penguins %>% head()", "library(palmerpenguins)", 
         "install.packages('palmerpenguins')"), value = c("penguins %>% head()", 
         "library(palmerpenguins)", "install.packages('palmerpenguins')"
@@ -301,28 +327,28 @@ learnr:::question_prerendered_chunk(structure(list(type = "sortable_rank", label
         answer = "installex2-answer", question = "installex2"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nAssuming you don&#39;t have the Palmer Penguins data in R on your computer, order the following so you can access the first six rows\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = TRUE, allow_retry = TRUE, 
-    seed = 218746240.898138, options = structure(list(), class = "sortable_options")), class = c("sortable_rank", 
+    seed = 703392894.172457, options = structure(list(), class = "sortable_options")), class = c("sortable_rank", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "installex3", 
     question = structure("Which of the following would be an appropriate step to take after getting this R error message - Error in library(palmerpenguins) : there is no package called ‘palmerpenguins’? Select all that apply. ?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_e126576", 
+    "character")), answers = list(structure(list(id = "lnr_ans_8a51a87", 
         option = "Yell at your computer", value = "Yell at your computer", 
         label = structure("Yell at your computer", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_71a6d93", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_eb27ca1", 
         option = "Running install.packages(\"palmerpenguins\")", 
         value = "Running install.packages(\"palmerpenguins\")", 
         label = structure("Running install.packages(&quot;palmerpenguins&quot;)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_dde9c24", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_844a443", 
         option = "Check that \"palmerpenguins\" precisely is the name of the package that you want to use", 
         value = "Check that \"palmerpenguins\" precisely is the name of the package that you want to use", 
         label = structure("Check that &quot;palmerpenguins&quot; precisely is the name of the package that you want to use", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c11157d", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d2b1e89", 
         option = "Ignore the error message and continue running the code that follows", 
         value = "Ignore the error message and continue running the code that follows", 
         label = structure("Ignore the error message and continue running the code that follows", html = TRUE, class = c("html", 
@@ -336,31 +362,31 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
         answer = "installex3-answer", question = "installex3"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nWhich of the following would be an appropriate step to take after getting this R error message - Error in library(palmerpenguins) : there is no package called ‘palmerpenguins’? Select all that apply. ?\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 753314672.649211, options = list()), class = c("learnr_checkbox", 
+    seed = 1318764092.8859, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "installex4", 
     question = structure("You want to find out more about the palmerpenguins library before deciding to use it. If you can&#39;t use Google, which of the following SHOULD you do?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_d173c52", 
+    "character")), answers = list(structure(list(id = "lnr_ans_5dce873", 
         option = "Double check that you have palmerpenguins installed in your environment", 
         value = "Double check that you have palmerpenguins installed in your environment", 
         label = structure("Double check that you have palmerpenguins installed in your environment", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4ad5f2b", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ae873ac", 
         option = "Run help(\"palmerpenguins\")", value = "Run help(\"palmerpenguins\")", 
         label = structure("Run help(&quot;palmerpenguins&quot;)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_46c5cdf", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_cdf6ef6", 
         option = "Run ?palmerpenguins", value = "Run ?palmerpenguins", 
         label = structure("Run ?palmerpenguins", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_538acfe", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ebcb599", 
         option = "Run help.search(\"palmerpenguins\")", value = "Run help.search(\"palmerpenguins\")", 
         label = structure("Run help.search(&quot;palmerpenguins&quot;)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9817ba2", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b4290a5", 
         option = "Run ??palmerpenguins", value = "Run ??palmerpenguins", 
         label = structure("Run ??palmerpenguins", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
@@ -373,7 +399,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
         answer = "installex4-answer", question = "installex4"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nYou want to find out more about the palmerpenguins library before deciding to use it. If you can&#39;t use Google, which of the following SHOULD you do?\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 2048720725.54599, options = list()), class = c("learnr_checkbox", 
+    seed = 1738870618.19028, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")), session = session)
 </script>
  
@@ -566,6 +592,109 @@ learnr:::store_exercise_cache(structure(list(global_setup = structure(c("knitr::
         label = "pipeex5", exercise = TRUE, code = "", out.width.px = 624, 
         out.height.px = 384, params.src = "pipeex5, exercise = TRUE", 
         fig.num = 0L, exercise.df_print = "paged"), engine = "r"), class = "tutorial_exercise"))
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "mcq", question = structure("Which of the following will cause a compiler error?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_1c8c777", 
+    option = "i_like_tidyversed <- TRUE", value = "i_like_tidyversed <- TRUE", 
+    label = structure("i_like_tidyversed &lt;- TRUE", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_dc54db1", 
+    option = "library(tidyverse)", value = "library(tidyverse)", 
+    label = structure("library(tidyverse)", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b2630fc", 
+    option = "install.packages('tidyverse'))", value = "install.packages('tidyverse'))", 
+    label = structure("install.packages(&#39;tidyverse&#39;))", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bedc73a", 
+    option = "some_number <- 3 * 6231 - 4", value = "some_number <- 3 * 6231 - 4", 
+    label = structure("some_number &lt;- 3 * 6231 - 4", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "mcq-answer", question = "mcq"), loading = structure("<strong>Loading:<\u002fstrong> \nWhich of the following will cause a compiler error?\n<br/><br/><br/>", html = TRUE, class = c("html", 
+"character")), random_answer_order = FALSE, allow_retry = FALSE, 
+    seed = 566055043.23641, options = list()), class = c("learnr_radio", 
+"tutorial_question")), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "mcq2", question = structure("What is the most likely cause of Error: Object &quot;avocado&quot; not found?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_9fa804c", 
+    option = "The object avocado does not exist in your console", 
+    value = "The object avocado does not exist in your console", 
+    label = structure("The object avocado does not exist in your console", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_643df20", 
+    option = "The function avocado() does not exist in your current environment", 
+    value = "The function avocado() does not exist in your current environment", 
+    label = structure("The function avocado() does not exist in your current environment", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fda9e5e", 
+    option = "The object avocado does not exist in your working directory", 
+    value = "The object avocado does not exist in your working directory", 
+    label = structure("The object avocado does not exist in your working directory", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_aa46b45", 
+    option = "The object avocado does not exist in your current environment", 
+    value = "The object avocado does not exist in your current environment", 
+    label = structure("The object avocado does not exist in your current environment", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9770942", 
+    option = "The file avocado.csv does not exist in your working directory", 
+    value = "The file avocado.csv does not exist in your working directory", 
+    label = structure("The file avocado.csv does not exist in your working directory", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "mcq2-answer", question = "mcq2"), loading = structure("<strong>Loading:<\u002fstrong> \nWhat is the most likely cause of Error: Object &quot;avocado&quot; not found?\n<br/><br/><br/>", html = TRUE, class = c("html", 
+"character")), random_answer_order = FALSE, allow_retry = FALSE, 
+    seed = 841729380.108039, options = list()), class = c("learnr_radio", 
+"tutorial_question")), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "mcq3", question = structure("You have a dataset filled with information about several different people and whether they have diabetes or not called &#39;diabetes.csv&#39; and you load it into your R program under the variable name &#39;diabetes&#39;. You see that the data&#39;s fields are &#39;gender&#39;, &#39;age&#39;, &#39;BMI&#39;, &#39;glucose&#39;, &#39;age&#39; and &#39;diabetes&#39;. You want to explore the data. Which of the following expressions are valid?.", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_ef7a34a", 
+    option = "diabete %>% groupby('age') %>% summarize(average_bmi = mean(BMI))", 
+    value = "diabete %>% groupby('age') %>% summarize(average_bmi = mean(BMI))", 
+    label = structure("diabete %&gt;% groupby(&#39;age&#39;) %&gt;% summarize(average_bmi = mean(BMI))", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_46d5bfe", 
+    option = "diabetes %>% groupby('age', 'gender') %>% summarize(average_bmi = mean(BMI))", 
+    value = "diabetes %>% groupby('age', 'gender') %>% summarize(average_bmi = mean(BMI))", 
+    label = structure("diabetes %&gt;% groupby(&#39;age&#39;, &#39;gender&#39;) %&gt;% summarize(average_bmi = mean(BMI))", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_78ea000", 
+    option = "diabetes %>% groupby('age', 'gender) %>% summarize(average_bmi = mean(BMI))", 
+    value = "diabetes %>% groupby('age', 'gender) %>% summarize(average_bmi = mean(BMI))", 
+    label = structure("diabetes %&gt;% groupby(&#39;age&#39;, &#39;gender) %&gt;% summarize(average_bmi = mean(BMI))", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a0f272", 
+    option = "diabetes %>% groupby('age', 'gender') %>% summarize(average_bmi = mean(bmi))", 
+    value = "diabetes %>% groupby('age', 'gender') %>% summarize(average_bmi = mean(bmi))", 
+    label = structure("diabetes %&gt;% groupby(&#39;age&#39;, &#39;gender&#39;) %&gt;% summarize(average_bmi = mean(bmi))", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "mcq3-answer", question = "mcq3"), loading = structure("<strong>Loading:<\u002fstrong> \nYou have a dataset filled with information about several different people and whether they have diabetes or not called &#39;diabetes.csv&#39; and you load it into your R program under the variable name &#39;diabetes&#39;. You see that the data&#39;s fields are &#39;gender&#39;, &#39;age&#39;, &#39;BMI&#39;, &#39;glucose&#39;, &#39;age&#39; and &#39;diabetes&#39;. You want to explore the data. Which of the following expressions are valid?.\n<br/><br/><br/>", html = TRUE, class = c("html", 
+"character")), random_answer_order = FALSE, allow_retry = FALSE, 
+    seed = 222794856.896253, options = list()), class = c("learnr_radio", 
+"tutorial_question")), session = session)
 </script>
  <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="dependencies">
