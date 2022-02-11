@@ -237,20 +237,24 @@ grade_result(
 
 
 
-<!-- ## Visualisation -->
+## Visualisation
 
-<!-- For visualisation we can use ggplot2. For example, we might want to see how flipper length varies with bill length. To do so, we can plot a scatter plot linking the two. -->
+For visualisation we can use ggplot2. For example, we might want to see how flipper length varies with bill length. To do so, we can plot a scatter plot linking the two. Replace the "haha"'s with the appropriate variable names to see this.
 
-<!-- ```{r visex1, exercise = TRUE} -->
 
-<!-- ``` -->
-<!-- ```{r visex1-check} -->
-<!-- grade_result( -->
-<!--   pass_if(~identical(.result, ggplot(data = penguins) + -->
-<!--   aes(x = bill_length_mm, y = flipper_length_mm) + -->
-<!--   geom_point())) -->
-<!-- ) -->
-<!-- ``` -->
+```{r visex1, exercise = TRUE}
+ggplot(data = haha) +
+   aes(x = haha, y = haha) +
+   geom_point()
+```
+```{r visex1-solution}
+ggplot(data = penguins) +
+   aes(x = bill_length_mm, y = flipper_length_mm) +
+   geom_point()
+```
+```{r visex1-check}
+grade_this_code("Great work!")
+```
 
 
 ## Questions
