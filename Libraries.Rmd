@@ -366,6 +366,27 @@ grade_this_code("Great work!")
 ```
 
 
+## Randomisation and Sampling
+
+Imagine that you roll a fair twelve-sided die fifteen times to decide how many litres of chocolate milk you will buy from Countdown in each of the next fifteen weeks. Modify the code below (don't add or remove any lines) to simulate this situation.
+
+
+```{r samex1, exercise = TRUE}
+n <- 1:93
+diceResults <- sample(n, 1000, replace = FALSE)
+diceResults
+```
+```{r samex1-solution}
+n <- 1:12
+diceResults <- sample(n, 15, replace = TRUE)
+diceResults
+```
+```{r samex1-check}
+grade_this_code("Great work!")
+```
+
+
+
 ## Questions
 
 ```{r mcq, echo=FALSE}
