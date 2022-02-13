@@ -21,7 +21,6 @@ library(tidyverse)
 options(repos = "https://cran.stat.auckland.ac.nz/")
 library(palmerpenguins)
 library(sortable)
-set.seed(1)
 ```
 
 ## Welcome
@@ -385,7 +384,270 @@ diceResults
 grade_this_code("Great work!")
 ```
 
+Let's say you want to see if sex affects the bill length of a Palmer Penguin. 
 
+First, you need to construct a statistic that measures the effect of interest.
+
+Replace the "haha"'s in the code below to get the relevant value. Only use data with no N/A's
+
+```{r samex2, exercise = TRUE}
+cleaned_data <- penguins %>% haha 
+diff_in_means <- cleaned_data %>% 
+  group_by(haha) %>% 
+  summarise(mean = haha) %>%
+  summarise(diff = haha) %>% haha
+diff_in_means
+```
+```{r samex2-solution}
+cleaned_data <- penguins %>% drop_na() 
+diff_in_means <- cleaned_data %>% 
+  group_by(sex) %>% 
+  summarise(mean = mean(bill_length_mm)) %>%
+  summarise(diff = diff(mean)) %>% as.numeric()
+diff_in_means
+```
+```{r samex2-check}
+grade_this_code("Great work!")
+```
+
+You want to randomise one thousand times. Modify the code below to set the relevant variable up correctly. Don't forget your cleaned_data variable from above.
+
+```{r samex3, exercise = TRUE}
+cleaned_data <- penguins %>% haha 
+diff_in_means <- cleaned_data %>% 
+  group_by(haha) %>% 
+  summarise(mean = haha) %>%
+  summarise(diff = haha) %>% haha
+nreps <- 9999  
+randomisation_difference_mean <- numeric(nreps)
+```
+```{r samex3-solution}
+cleaned_data <- penguins %>% drop_na() 
+diff_in_means <- cleaned_data %>% 
+  group_by(sex) %>% 
+  summarise(mean = mean(bill_length_mm)) %>%
+  summarise(diff = diff(mean)) %>% as.numeric()
+nreps <- 1000  
+randomisation_difference_mean <- numeric(nreps)
+```
+```{r samex3-check}
+grade_this_code("Great work!")
+```
+
+Then, you want to loop the same amount of times you randomise, using the relevant variable. Modify the loop below to use the correct variable (don't worry about what's printed inside the loop in this exercise). Make sure you copy your code from the above exercise too.
+
+```{r samex4, exercise = TRUE}
+cleaned_data <- penguins %>% haha 
+diff_in_means <- cleaned_data %>% 
+  group_by(haha) %>% 
+  summarise(mean = haha) %>%
+  summarise(diff = haha) %>% haha
+nreps <- 9999  
+randomisation_difference_mean <- numeric(nreps)
+for (i in 1:2309) {
+  print("Hey there Delilah")
+}
+```
+```{r samex4-solution}
+cleaned_data <- penguins %>% drop_na() 
+diff_in_means <- cleaned_data %>% 
+  group_by(sex) %>% 
+  summarise(mean = mean(bill_length_mm)) %>%
+  summarise(diff = diff(mean)) %>% as.numeric()
+nreps <- 1000  
+randomisation_difference_mean <- numeric(nreps)
+for (i in 1:nreps) {
+  print("Hey there Delilah")
+}
+```
+```{r samex4-check}
+grade_this_code("Great work!")
+```
+
+Next, within the loop from the exercise above, create a dataframe which stores all the bill lengths from your cleaned dataframe.
+
+
+```{r samex5, exercise = TRUE}
+cleaned_data <- penguins %>% haha 
+diff_in_means <- cleaned_data %>% 
+  group_by(haha) %>% 
+  summarise(mean = haha) %>%
+  summarise(diff = haha) %>% haha
+nreps <- 9999  
+randomisation_difference_mean <- numeric(nreps)
+for (i in 1:2309) {
+  data <- data.frame(value = haha$haha)
+}
+```
+```{r samex5-solution}
+cleaned_data <- penguins %>% drop_na() 
+diff_in_means <- cleaned_data %>% 
+  group_by(sex) %>% 
+  summarise(mean = mean(bill_length_mm)) %>%
+  summarise(diff = diff(mean)) %>% as.numeric()
+nreps <- 1000  
+randomisation_difference_mean <- numeric(nreps)
+for (i in 1:nreps) {
+  data <- data.frame(value = cleaned_data$bill_length_mm)
+}
+```
+```{r samex5-check}
+grade_this_code("Great work!")
+```
+
+Next, within the loop, add randomised labels to store within your dataframe.
+
+```{r samex6, exercise = TRUE}
+cleaned_data <- penguins %>% haha 
+diff_in_means <- cleaned_data %>% 
+  group_by(haha) %>% 
+  summarise(mean = haha) %>%
+  summarise(diff = haha) %>% haha
+nreps <- 9999  
+randomisation_difference_mean <- numeric(nreps)
+for (i in 1:2309) {
+  data <- data.frame(value = haha$haha)
+  data$random_labels <-sample(haha$haha, replace = haha)
+}
+```
+```{r samex6-solution}
+cleaned_data <- penguins %>% drop_na() 
+diff_in_means <- cleaned_data %>% 
+  group_by(sex) %>% 
+  summarise(mean = mean(bill_length_mm)) %>%
+  summarise(diff = diff(mean)) %>% as.numeric()
+nreps <- 1000  
+randomisation_difference_mean <- numeric(nreps)
+for (i in 1:nreps) {
+  data <- data.frame(value = cleaned_data$bill_length_mm)
+  data$random_labels <-sample(cleaned_data$sex, replace = FALSE)
+}
+```
+```{r samex6-check}
+grade_this_code("Great work!")
+```
+
+Next, you need to get each randomised mean difference and place it in your randomisation difference vector. Note - here you need to be extra mindful of which variables you use, where and why. Also, a correct answer will probably take some time (like a minute) to be processed as this last part is quite time consuming.
+
+```{r samex7, exercise = TRUE}
+cleaned_data <- penguins %>% haha 
+diff_in_means <- cleaned_data %>% 
+  group_by(haha) %>% 
+  summarise(mean = haha) %>%
+  summarise(diff = haha) %>% haha
+nreps <- 9999  
+randomisation_difference_mean <- numeric(nreps)
+for (i in 1:2309) {
+  data <- data.frame(value = haha$haha)
+  data$random_labels <-sample(haha$haha, replace = haha)
+  randomisation_difference_mean[i] <- data %>% 
+    group_by(haha) %>% summarise(mean = mean(haha)) %>% 
+    summarise(diff = diff(haha)) %>% as.numeric()
+}
+```
+```{r samex7-solution}
+cleaned_data <- penguins %>% drop_na() 
+diff_in_means <- cleaned_data %>% 
+  group_by(sex) %>% 
+  summarise(mean = mean(bill_length_mm)) %>%
+  summarise(diff = diff(mean)) %>% as.numeric()
+nreps <- 1000  
+randomisation_difference_mean <- numeric(nreps)
+for (i in 1:nreps) {
+  data <- data.frame(value = cleaned_data$bill_length_mm)
+  data$random_labels <-sample(cleaned_data$sex, replace = FALSE)
+  randomisation_difference_mean[i] <- data %>% 
+    group_by(random_labels) %>% summarise(mean = mean(value)) %>% 
+    summarise(diff = diff(mean)) %>% as.numeric()
+}
+```
+```{r samex7-check}
+grade_this_code("Great work!")
+```
+
+Lastly, generate a dataframe with the difference between your mean vectors.
+
+```{r samex8, exercise = TRUE}
+cleaned_data <- penguins %>% haha 
+diff_in_means <- cleaned_data %>% 
+  group_by(haha) %>% 
+  summarise(mean = haha) %>%
+  summarise(diff = haha) %>% haha
+nreps <- 9999  
+randomisation_difference_mean <- numeric(nreps)
+for (i in 1:2309) {
+  data <- data.frame(value = haha$haha)
+  data$random_labels <-sample(haha$haha, replace = haha)
+  randomisation_difference_mean[i] <- data %>% 
+    group_by(haha) %>% summarise(mean = mean(haha)) %>% 
+    summarise(diff = diff(haha)) %>% as.numeric()
+}
+results <- data.frame(randomisation_difference_mean = c(haha, haha))
+```
+```{r samex8-solution}
+cleaned_data <- penguins %>% drop_na() 
+diff_in_means <- cleaned_data %>% 
+  group_by(sex) %>% 
+  summarise(mean = mean(bill_length_mm)) %>%
+  summarise(diff = diff(mean)) %>% as.numeric()
+nreps <- 1000  
+randomisation_difference_mean <- numeric(nreps)
+for (i in 1:nreps) {
+  data <- data.frame(value = cleaned_data$bill_length_mm)
+  data$random_labels <-sample(cleaned_data$sex, replace = FALSE)
+  randomisation_difference_mean[i] <- data %>% 
+    group_by(random_labels) %>% summarise(mean = mean(value)) %>% 
+    summarise(diff = diff(mean)) %>% as.numeric()
+}
+results <- data.frame(randomisation_difference_mean = c(diff_in_means, randomisation_difference_mean))
+```
+```{r samex8-check}
+grade_this_code("Great work!")
+```
+
+Lastly, how many randomised differences in means are as least as extreme as the one we observed?
+
+```{r samex9, exercise = TRUE}
+cleaned_data <- penguins %>% haha 
+diff_in_means <- cleaned_data %>% 
+  group_by(haha) %>% 
+  summarise(mean = haha) %>%
+  summarise(diff = haha) %>% haha
+nreps <- 9999  
+randomisation_difference_mean <- numeric(nreps)
+for (i in 1:2309) {
+  data <- data.frame(value = haha$haha)
+  data$random_labels <-sample(haha$haha, replace = haha)
+  randomisation_difference_mean[i] <- data %>% 
+    group_by(haha) %>% summarise(mean = mean(haha)) %>% 
+    summarise(diff = diff(haha)) %>% as.numeric()
+}
+results <- data.frame(randomisation_difference_mean = c(haha, haha))
+n_exceed <- sum(abs(haha$haha) >= abs(haha))
+n_exceed
+```
+```{r samex9-solution}
+cleaned_data <- penguins %>% drop_na() 
+diff_in_means <- cleaned_data %>% 
+  group_by(sex) %>% 
+  summarise(mean = mean(bill_length_mm)) %>%
+  summarise(diff = diff(mean)) %>% as.numeric()
+nreps <- 1000  
+randomisation_difference_mean <- numeric(nreps)
+for (i in 1:nreps) {
+  data <- data.frame(value = cleaned_data$bill_length_mm)
+  data$random_labels <-sample(cleaned_data$sex, replace = FALSE)
+  randomisation_difference_mean[i] <- data %>% 
+    group_by(random_labels) %>% summarise(mean = mean(value)) %>% 
+    summarise(diff = diff(mean)) %>% as.numeric()
+}
+results <- data.frame(randomisation_difference_mean = c(diff_in_means, randomisation_difference_mean))
+n_exceed <- sum(abs(results$randomisation_difference_mean) >= abs(diff_in_means))
+n_exceed
+```
+```{r samex9-check}
+grade_this_code("Great work!")
+```
 
 ## Questions
 
