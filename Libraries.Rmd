@@ -158,39 +158,6 @@ grade_result(
   pass_if(~identical(as.numeric(.result), 20))
 )
 ```
-<!-- ## Load libraries and ask for help -->
-
-<!-- To access the data, you need to load the "palmerpenguins" library into your R program. As it is now installed, you can do so! -->
-
-<!-- ```{r loadex1, exercise = TRUE} -->
-
-<!-- ``` -->
-<!-- ```{r loadex1-check} -->
-<!-- grade_result( -->
-<!--   pass_if(~identical(.result, library(palmerpenguins))) -->
-<!-- ) -->
-<!-- ``` -->
-
-
-<!-- You want to know more about the palmerpenguins library you are working with. There are two commonly used ways of doing this in R. Write down one below. -->
-
-<!-- ```{r helpex1, exercise = TRUE} -->
-
-<!-- ``` -->
-<!-- ```{r helpex1-solution} -->
-<!--     help(palmerpenguins) -->
-<!-- ``` -->
-
-<!-- You need the tidyverse library to manipulate this data. You will also need ggplot2 to visualise it. Load each library in below. -->
-
-<!-- ```{r loadex2, exercise = TRUE} -->
-
-<!-- ``` -->
-<!-- ```{r loadex2-solution} -->
-<!--     library(tidyverse) -->
-<!--     library(ggplot2) -->
-<!-- ``` -->
-
 
 
 ## Piping
@@ -270,20 +237,133 @@ grade_result(
 
 
 
-<!-- ## Visualisation -->
+## Visualisation
 
-<!-- For visualisation we can use ggplot2. For example, we might want to see how flipper length varies with bill length. To do so, we can plot a scatter plot linking the two. -->
+For visualisation we can use ggplot2. For example, we might want to see how flipper length varies with bill length. To do so, we can plot a scatter plot linking the two. Replace the "haha"'s with the appropriate variable names to see this.
 
-<!-- ```{r visex1, exercise = TRUE} -->
 
-<!-- ``` -->
-<!-- ```{r visex1-check} -->
-<!-- grade_result( -->
-<!--   pass_if(~identical(.result, ggplot(data = penguins) + -->
-<!--   aes(x = bill_length_mm, y = flipper_length_mm) + -->
-<!--   geom_point())) -->
-<!-- ) -->
-<!-- ``` -->
+```{r visex1, exercise = TRUE}
+ggplot(data = haha) +
+   aes(x = haha, y = haha) +
+   geom_point()
+```
+```{r visex1-solution}
+ggplot(data = penguins) +
+   aes(x = bill_length_mm, y = flipper_length_mm) +
+   geom_point()
+```
+```{r visex1-check}
+grade_this_code("Great work!")
+```
+
+Following from the above, what if we want to clearly see the difference in relationship between flipper length and bill length by sex (male or female, as defined in our dataset)? Using the correct answer from above, replace the appropriate "haha"'s to add to it so male is blue and female is green.  
+
+```{r visex2, exercise = TRUE}
+ggplot(data = haha) +
+   aes(x = haha, y = haha) +
+   geom_point(aes(color = haha)) +
+  scale_color_manual(values = c(haha, haha))
+```
+```{r visex2-solution}
+ggplot(data = penguins) +
+   aes(x = bill_length_mm, y = flipper_length_mm) +
+   geom_point(aes(color = sex)) +
+  scale_color_manual(values = c("green", "blue"))
+```
+```{r visex2-check}
+grade_this_code("Great work!")
+```
+
+Great work! However from above, we are reminded that N/A values are in the data, since we used the initial data. Following from the above code, use the appropriate function to remove all rows with N/A from the data.
+
+```{r visex3, exercise = TRUE}
+ggplot(data = haha %>% haha) +
+   aes(x = haha, y = haha) +
+   geom_point(aes(color = haha)) +
+  scale_color_manual(values = c(haha, haha))
+```
+```{r visex3-solution}
+ggplot(data = penguins  %>% drop_na()) +
+   aes(x = bill_length_mm, y = flipper_length_mm) +
+   geom_point(aes(color = sex)) +
+  scale_color_manual(values = c("green", "blue"))
+```
+```{r visex3-check}
+grade_this_code("Great work!")
+```
+
+Looking good! However, for an outsider looking at the plot, seeing the variable names on the x and y axis might feel strange. Add labels so you see "Bill length (mm)" and "Flipper length (mm)" on the appropriate axes instead.
+
+```{r visex4, exercise = TRUE}
+ggplot(data = haha %>% haha) +
+   aes(x = haha, y = haha) +
+   geom_point(aes(color = haha)) +
+  scale_color_manual(values = c(haha, haha)) +
+  xlab(haha) +
+  ylab(haha)
+```
+```{r visex4-solution}
+ggplot(data = penguins  %>% drop_na()) +
+   aes(x = bill_length_mm, y = flipper_length_mm) +
+   geom_point(aes(color = sex)) +
+  scale_color_manual(values = c("green", "blue")) +
+  xlab("Bill length (mm)") +
+  ylab("Flipper length (mm)")
+```
+```{r visex4-check}
+grade_this_code("Great work!")
+```
+
+To make things clearer, we may like to put a title. Put in the title "Plot of bill length against flipper length".
+
+
+```{r visex5, exercise = TRUE}
+ggplot(data = haha %>% haha) +
+   aes(x = haha, y = haha) +
+   geom_point(aes(color = haha)) +
+  scale_color_manual(values = c(haha, haha)) +
+  ggtitle(haha) +
+  xlab(haha) +
+  ylab(haha)
+```
+```{r visex5-solution}
+ggplot(data = penguins  %>% drop_na()) +
+   aes(x = bill_length_mm, y = flipper_length_mm) +
+   geom_point(aes(color = sex)) +
+  scale_color_manual(values = c("green", "blue")) +
+  ggtitle("Plot of bill length against flipper length") +
+  xlab("Bill length (mm)") +
+  ylab("Flipper length (mm)")
+```
+```{r visex5-check}
+grade_this_code("Great work!")
+```
+
+Final addition - let's make this plot look classic. That means clear x and y axis lines and no gridlines. Replace the last "haha" with the appropriate word completing the function.
+
+```{r visex6, exercise = TRUE}
+ggplot(data = haha %>% haha) +
+   aes(x = haha, y = haha) +
+   geom_point(aes(color = haha)) +
+  scale_color_manual(values = c(haha, haha)) +
+  ggtitle(haha) +
+  xlab(haha) +
+  ylab(haha) +
+  theme_haha()
+```
+```{r visex6-solution}
+ggplot(data = penguins  %>% drop_na()) +
+   aes(x = bill_length_mm, y = flipper_length_mm) +
+   geom_point(aes(color = sex)) +
+  scale_color_manual(values = c("green", "blue")) +
+  ggtitle("Plot of bill length against flipper length") +
+  xlab("Bill length (mm)") +
+  ylab("Flipper length (mm)") +
+  theme_classic()
+```
+```{r visex6-check}
+grade_this_code("Great work!")
+```
 
 
 ## Questions
