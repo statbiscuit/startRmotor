@@ -1,5 +1,5 @@
 ---
-title: "Libraries"
+title: "Learn R Programming"
 author: "Kabilan Kathiravel"
 date: "05/12/2021"
 output: 
@@ -25,13 +25,8 @@ library(sortable)
 
 ## Welcome
 
-This is a tutorial on libraries in R and the pipe operator. If you are not sure what a library is in this context, please check out [this link](https://hbctraining.github.io/Intro-to-R-flipped/lessons/04_introR_packages.html) to get some idea before trying the exercises. For the pipe operator try [here](https://style.tidyverse.org/pipes.html).
+Here you get some interactive exercises to practice your R programming skills! Here we focus on Installing (and using) packages, debugging, piping, and some other useful topics. Check [this](https://stats-uoa.github.io/BIOSCI220/) out to look into each of these topics in more depth.
 
-In this tutorial you will learn about:
-
-- Loading and installing libraries
-- Getting help to understand a specific library in R
-- The pipe operator (%>%)
 
 ## Install packages
 
