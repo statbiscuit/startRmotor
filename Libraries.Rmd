@@ -39,7 +39,8 @@ question("Which of the following commands installs the palmerpenguins library in
   answer("install(palmerpenguins)"),
   answer("library(tidyverse)"),
   answer("install.packages('palmerpenguins')", correct = TRUE),
-  answer("open sesame")
+  answer("open sesame"),
+  allow_retry = TRUE
 )
 ```
 ```{r installex2, echo=FALSE}
@@ -651,7 +652,8 @@ question("Which of the following will cause a compiler error?",
    answer("i_like_tidyversed <- TRUE"),
    answer("library(tidyverse)"),
    answer("install.packages('tidyverse'))", correct = TRUE),
-   answer("some_number <- 3 * 6231 - 4") 
+   answer("some_number <- 3 * 6231 - 4"),
+  allow_retry = TRUE 
  )
  ```
  ```{r mcq2, echo=FALSE}
@@ -660,7 +662,8 @@ question("What is the most likely cause of Error: Object \"avocado\" not found?"
    answer("The function avocado() does not exist in your current environment", correct = TRUE),
    answer("The object avocado does not exist in your working directory"),
    answer("The object avocado does not exist in your current environment"),
-   answer("The file avocado.csv does not exist in your working directory") 
+   answer("The file avocado.csv does not exist in your working directory"),
+  allow_retry = TRUE 
  )
  ```
   ```{r mcq3, echo=FALSE}
@@ -668,7 +671,8 @@ question("You have a dataset filled with information about several different peo
    answer("diabete %>% groupby('age') %>% summarize(average_bmi = mean(BMI))"),
    answer("diabetes %>% groupby('age', 'gender') %>% summarize(average_bmi = mean(BMI))", correct = TRUE),
    answer("diabetes %>% groupby('age', 'gender) %>% summarize(average_bmi = mean(BMI))"),
-   answer("diabetes %>% groupby('age', 'gender') %>% summarize(average_bmi = mean(bmi))") 
+   answer("diabetes %>% groupby('age', 'gender') %>% summarize(average_bmi = mean(bmi))"),
+  allow_retry = TRUE 
  )
  ```
    ```{r mcq4, echo=FALSE}
@@ -676,7 +680,8 @@ question("Which of the following would get you the average 'height' for the tibb
    answer("elephants %>% summarize(average_height) %>% group_by(nation)"),
    answer("elephants %<% group_by(nation) %<% summarize(average_height = mean(height)"),
    answer("elephants %>% group_by(nation, creed) %>% summarize(mean(height))"),
-   answer("elephants %>% group_by(nation) %>% summarize(average_height = mean(height))", correct = TRUE) 
+   answer("elephants %>% group_by(nation) %>% summarize(average_height = mean(height))", correct = TRUE),
+  allow_retry = TRUE
  )
  ```
 ```{r mcq5, echo=FALSE}
@@ -684,7 +689,8 @@ question("Which of the following is the most likely reason for getting the follo
    answer("The function mean() does not exist"),
    answer("The gatekeepers of the universe casted a curse on your R"),
    answer("You haven’t loaded the package that contains the function %>%", correct = TRUE),
-   answer("The object data does not contain a column named x") 
+   answer("The object data does not contain a column named x"),
+  allow_retry = TRUE
  )
  ```
  ```{r mcq6, echo=FALSE}
@@ -693,7 +699,8 @@ question("Which of the following shows how to express 'filter(penguins_nafree, i
    answer("(island == \"Torgersen\") %>% filter(penguins_nafree)"),
    answer("penguins_nafree %>% filter(island == \"Torgerson\")"),
    answer("penguins_nafree %<% filter(island == \"Torgersen\")"),
-   answer("None of the above", correct = TRUE) 
+   answer("None of the above", correct = TRUE),
+  allow_retry = TRUE
  )
  ```
 
