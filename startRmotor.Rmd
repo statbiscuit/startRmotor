@@ -1,7 +1,7 @@
 ---
-title: "Learn R Programming"
-author: "Kabilan Kathiravel"
-date: "05/12/2021"
+title: "BIOSCI220: introR"
+author: ""
+date: ""
 output: 
   learnr::tutorial:
     progressive: true
@@ -23,14 +23,22 @@ library(palmerpenguins)
 library(sortable)
 ```
 
-## Welcome
+## Nau mai, haere mai
 
-Here you get some interactive exercises to practice your R programming skills! Here we focus on Installing (and using) packages, debugging, piping, and some other useful topics. Check [this](https://stats-uoa.github.io/BIOSCI220/) out to look into each of these topics in more depth.
+The goal of this application is to provide you with interactive exercises to help you practise your `R` programming skills! This application works alongside [the BIOSCI220 course guide](https://stats-uoa.github.io/BIOSCI220/) (for module 1) so please refer back to the guide for a more in-depth look into each of the topics.
+
+---
+
+The app was developed by Kabilan Kathiravel as part of a 2021/2 summer research project.
 
 
-## Install packages
+## Installing packages
 
-Let's have a look at the [Palmer Penguins dataset](https://allisonhorst.github.io/palmerpenguins/articles/intro.html). It contains size measurements for three penguin species observed on three islands in Antarctica's Palmer Archipelago. 
+Recall that an `R` package is simply a collection of functions (a command that asks `R` to perfomr some task for us)! 
+
+The base installation of `R` comes with many useful packages as standard and these packages will contain many of the functions you will use on a daily basis (e.g., `mean()`, `length()`). However, often we wish to do more than base `R` offers! To do this we need to access all the other amazing packages that are out there are in the `R`verse.
+
+Here we consider the [Palmer Penguins dataset](https://allisonhorst.github.io/palmerpenguins/articles/intro.html), contained in the `R` package `palmerpenguins`. It contains a range of measurements for three penguin species observed on three islands in Antarctica's Palmer Archipelago. 
 
 If we don't have the package installed in R, we have to do so.
 
@@ -43,6 +51,7 @@ question("Which of the following commands installs the palmerpenguins library in
   allow_retry = TRUE
 )
 ```
+
 ```{r installex2, echo=FALSE}
 correct_penguins <- c(
     "install.packages('palmerpenguins')",
@@ -69,8 +78,9 @@ question("Which of the following would be an appropriate step to take after gett
   allow_retry = TRUE
 )
 ```
+
 ```{r installex4, echo=FALSE}
-question("You want to find out more about the palmerpenguins library before deciding to use it. If you can't use Google, which of the following SHOULD you do?",
+question("You want to find out more about the palmerpenguins package before deciding to use it. If you can't use Google, which of the following SHOULD you do?",
   answer("Double check that you have palmerpenguins installed in your environment", correct = TRUE),
   answer("Run help(\"palmerpenguins\")"),
   answer("Run ?palmerpenguins"),
@@ -82,7 +92,7 @@ question("You want to find out more about the palmerpenguins library before deci
 
 ## Debugging
 
-We want to load all the Palmer Penguins data. However we have an error (run this to see it). Correct the code to get the Palmer Penguins tibble.
+We want to load all the Palmer Penguins data (object `penguins`) that is contained in the `R` package `palmerpenguins`. However, we have an error (run this to see it). Correct the code to get the Palmer Penguins tibble.
 
 ```{r debugex1, exercise = TRUE}
 penguin
@@ -157,7 +167,7 @@ grade_result(
 
 ## Piping
 
-Now we have each library we need - excellent! Now we can get to looking at the data using the penguins dataset it is loaded to.
+Great, we now have each package we need - excellent! So let's get on with some data exploration.
 
 Let's have a look at the first six rows, using the pipe operator (%>%).
 
@@ -506,6 +516,7 @@ for (i in 1:2309) {
   data$random_labels <-sample(haha$haha, replace = haha)
 }
 ```
+
 ```{r samex6-solution}
 cleaned_data <- penguins %>% drop_na() 
 diff_in_means <- cleaned_data %>% 
@@ -557,6 +568,7 @@ for (i in 1:nreps) {
     summarise(diff = diff(mean)) %>% as.numeric()
 }
 ```
+
 ```{r samex7-check}
 grade_this_code("Great work!")
 ```
@@ -580,6 +592,7 @@ for (i in 1:2309) {
 }
 results <- data.frame(randomisation_difference_mean = c(haha, haha))
 ```
+
 ```{r samex8-solution}
 cleaned_data <- penguins %>% drop_na() 
 diff_in_means <- cleaned_data %>% 
@@ -595,8 +608,9 @@ for (i in 1:nreps) {
     group_by(random_labels) %>% summarise(mean = mean(value)) %>% 
     summarise(diff = diff(mean)) %>% as.numeric()
 }
-results <- data.frame(randomisation_difference_mean = c(diff_in_means, randomisation_difference_mean))
+results<- data.frame(randomisation_difference_mean = c(diff_in_means, randomisation_difference_mean))
 ```
+
 ```{r samex8-check}
 grade_this_code("Great work!")
 ```
@@ -622,6 +636,7 @@ results <- data.frame(randomisation_difference_mean = c(haha, haha))
 n_exceed <- sum(abs(haha$haha) >= abs(haha))
 n_exceed
 ```
+
 ```{r samex9-solution}
 cleaned_data <- penguins %>% drop_na() 
 diff_in_means <- cleaned_data %>% 
@@ -641,6 +656,7 @@ results <- data.frame(randomisation_difference_mean = c(diff_in_means, randomisa
 n_exceed <- sum(abs(results$randomisation_difference_mean) >= abs(diff_in_means))
 n_exceed
 ```
+
 ```{r samex9-check}
 grade_this_code("Great work!")
 ```
@@ -655,8 +671,10 @@ question("Which of the following will cause a compiler error?",
    answer("some_number <- 3 * 6231 - 4"),
   allow_retry = TRUE 
  )
- ```
- ```{r mcq2, echo=FALSE}
+```
+
+
+```{r mcq2, echo=FALSE}
 question("What is the most likely cause of Error: Object \"avocado\" not found?",
    answer("The object avocado does not exist in your console"),
    answer("The function avocado() does not exist in your current environment", correct = TRUE),
@@ -665,8 +683,9 @@ question("What is the most likely cause of Error: Object \"avocado\" not found?"
    answer("The file avocado.csv does not exist in your working directory"),
   allow_retry = TRUE 
  )
- ```
-  ```{r mcq3, echo=FALSE}
+```
+
+```{r mcq3, echo=FALSE}
 question("You have a dataset filled with information about several different people and whether they have diabetes or not called 'diabetes.csv' and you load it into your R program under the variable name 'diabetes'. You see that the data's fields are 'gender', 'age', 'BMI', 'glucose', 'age' and 'diabetes'. You want to explore the data. Which of the following expressions are valid?.",
    answer("diabete %>% groupby('age') %>% summarize(average_bmi = mean(BMI))"),
    answer("diabetes %>% groupby('age', 'gender') %>% summarize(average_bmi = mean(BMI))", correct = TRUE),
@@ -674,8 +693,9 @@ question("You have a dataset filled with information about several different peo
    answer("diabetes %>% groupby('age', 'gender') %>% summarize(average_bmi = mean(bmi))"),
   allow_retry = TRUE 
  )
- ```
-   ```{r mcq4, echo=FALSE}
+```
+ 
+ ```{r mcq4, echo=FALSE}
 question("Which of the following would get you the average 'height' for the tibble 'elephants' in each 'nation'?",
    answer("elephants %>% summarize(average_height) %>% group_by(nation)"),
    answer("elephants %<% group_by(nation) %<% summarize(average_height = mean(height)"),
@@ -683,7 +703,8 @@ question("Which of the following would get you the average 'height' for the tibb
    answer("elephants %>% group_by(nation) %>% summarize(average_height = mean(height))", correct = TRUE),
   allow_retry = TRUE
  )
- ```
+```
+
 ```{r mcq5, echo=FALSE}
 question("Which of the following is the most likely reason for getting the following R error message Error in data %>% mean(x) : could not find function \"%>%\"?",
    answer("The function mean() does not exist"),
@@ -692,8 +713,9 @@ question("Which of the following is the most likely reason for getting the follo
    answer("The object data does not contain a column named x"),
   allow_retry = TRUE
  )
- ```
- ```{r mcq6, echo=FALSE}
+```
+ 
+```{r mcq6, echo=FALSE}
 question("Which of the following shows how to express 'filter(penguins_nafree, island == \"Torgersen\"' through piping?"
 ,
    answer("(island == \"Torgersen\") %>% filter(penguins_nafree)"),
@@ -702,8 +724,7 @@ question("Which of the following shows how to express 'filter(penguins_nafree, i
    answer("None of the above", correct = TRUE),
   allow_retry = TRUE
  )
- ```
-
+```
 
 
 
