@@ -695,7 +695,7 @@ question("You have a dataset filled with information about several different peo
  )
 ```
  
- ```{r mcq4, echo=FALSE}
+```{r mcq4, echo=FALSE}
 question("Which of the following would get you the average 'height' for the tibble 'elephants' in each 'nation'?",
    answer("elephants %>% summarize(average_height) %>% group_by(nation)"),
    answer("elephants %<% group_by(nation) %<% summarize(average_height = mean(height)"),
