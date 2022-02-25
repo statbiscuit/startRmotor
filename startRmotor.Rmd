@@ -152,22 +152,12 @@ grade_result(
 )
 ```
 
-Put in the right index to return the last number in series b (avoid the temptation to write the answer directly :) )
-
-```{r debugex6, exercise = TRUE}
-b <- 10:20
-b[29]
-```
-```{r debugex6-check}
-grade_result(
-  pass_if(~identical(as.numeric(.result), 20))
-)
-```
-
 
 ## Piping
 
 Great, we now have each package we need - excellent! So let's get on with some data exploration.
+
+Here you will have to **write the code from scratch**. You can assume that all previous objects you've created (e.g., `penguins`) are available for you to manipulate.
 
 Let's have a look at the first six rows, using the pipe operator (%>%).
 
@@ -664,9 +654,9 @@ grade_this_code("Great work!")
 ## Questions
 
 ```{r mcq, echo=FALSE}
-question("Which of the following will cause a compiler error?",
+question("Which of the following will MOST likely cause an Error?",
    answer("i_like_tidyversed <- TRUE"),
-   answer("library(tidyverse)"),
+   answer("install.packages('tidyverse')"),
    answer("install.packages('tidyverse'))", correct = TRUE),
    answer("some_number <- 3 * 6231 - 4"),
   allow_retry = TRUE 
